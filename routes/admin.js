@@ -55,6 +55,17 @@ router.get("/admin/users/activities/:user_id", middleware.isAdmin, adminControll
 //admin -> show activities by category
 router.post("/admin/users/activities/:user_id", middleware.isAdmin, adminController.postShowActivitiesByCategory);
 
+// admin -> add a user
+router.get("/admin/user/add", middleware.isAdmin, adminController.getAddUser);
+
+router.post("/admin/user/add", middleware.isAdmin, adminController.postAddUser);
+
+// admin -> show user to be updated
+router.get("/admin/user/update/:user_id", middleware.isAdmin, adminController.getUpdateUser)
+
+// admin -> update user
+router.post("/admin/user/update/:user_id", middleware.isAdmin, adminController.postUpdateUser)
+
 // admin -> delete a user
 router.get("/admin/users/delete/:user_id", middleware.isAdmin, adminController.getDeleteUser);
 
@@ -62,6 +73,23 @@ router.get("/admin/users/delete/:user_id", middleware.isAdmin, adminController.g
 router.get("/admin/books/add", middleware.isAdmin, adminController.getAddNewBook);
 
 router.post("/admin/books/add", middleware.isAdmin, adminController.postAddNewBook);
+
+//admin -> issue book
+router.get("/admin/books/issue", middleware.isAdmin, adminController.getIssueBook);
+
+router.post("/admin/books/issue", middleware.isAdmin, adminController.postIssueBook);
+
+// admin -> show return/renew page
+router.get("/admin/books/return-renew", middleware.isAdmin, adminController.getShowRenewReturn)
+
+// admin -> show filtered return/renew page
+router.post("/admin/books/return-renew/filtered", middleware.isAdmin, adminController.getFilterRenewReturn)
+
+//user -> renew book
+router.post("/admin/books/:username/:book_id/renew", middleware.isLoggedIn, adminController.postRenewBook);
+
+// user -> return book
+router.post("/admin/books/:username/:book_id/return", middleware.isLoggedIn, adminController.postReturnBook);
 
 //admin -> profile
 router.get("/admin/profile", middleware.isAdmin, adminController.getAdminProfile);

@@ -60,25 +60,24 @@
                 <% if(activities[i].category =="Issue") { %>
                       <td>
                          <a href="/admin/users/profile/<%=activities[i].user_id.id%>" title="Visit profile">
-                           <%=activities[i].user_id.username || 'This user'%></a>  issued <%=activities[i].info.title%>
+                           <%=activities[i].user_id.userFullName || 'This user'%></a>  issued <%=activities[i].info.title%>
                       </td>
                       <td>Issue</td>
                       <td><%=activities[i].entryTime.toDateString()%></td>
                   <% } else if(activities[i].category =="Return") { %>
                       <td>
                         <a href="/admin/users/profile/<%=activities[i].user_id.id%>" title="Visit profile">
-                          <%=activities[i].user_id.username || 'This user'%> </a> returned <%=activities[i].info.title%>
+                          <%=activities[i].user_id.userFullName || 'This user'%> </a> returned <%=activities[i].info.title%>
                       </td>
                       <td>Return</td>
                       <td><%=activities[i].entryTime.toDateString()%></td>
                   <% }  else if(activities[i].category =="Renew") { %>
-                      <td>
-                        <a href="/admin/users/profile/<%=activities[i].user_id.id%>" title="Visit profile">
-                          <%=activities[i].user_id.username || 'This user'%> </a> renewed <%=activities[i].info.title%>
-                      </td>
-                      <td>Renew</td>
-                      <td><%=activities[i].entryTime.toDateString()%></td>
-                      
+                    <td>
+                      <a href="/admin/users/profile/<%=activities[i].user_id.id%>" title="Visit profile">
+                        <%=activities[i].user_id.userFullName || 'This user'%> </a> renewed <%=activities[i].info.title%>
+                    </td>
+                    <td>Renew</td>
+                    <td><%=activities[i].entryTime.toDateString()%></td>
                   <% }  else if(activities[i].category =="Update Profile") { %>
                       <td>
                         <a href="/admin/users/profile/<%=activities[i].user_id.id%>" title="Visit profile">

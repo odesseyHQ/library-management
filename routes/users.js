@@ -31,10 +31,9 @@ router.post("/books/:book_id/issue/:user_id", middleware.isLoggedIn, userControl
 router.get("/books/return-renew", middleware.isLoggedIn, userController.getShowRenewReturn);
 
 //user -> renew book
-router.post("/books/:book_id/renew", middleware.isLoggedIn, middleware.isLoggedIn, userController.postRenewBook);
+router.post("/books/:book_id/renew", middleware.isLoggedIn, userController.postRenewBook);
 
 // user -> return book
-
 router.post("/books/:book_id/return", middleware.isLoggedIn, userController.postReturnBook);
 
 //user -> create new comment
