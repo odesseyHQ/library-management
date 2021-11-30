@@ -24,9 +24,16 @@ exports.getAdminSignUp = (req, res, next) => {
 };
 
 exports.postAdminSignUp = async (req, res, next) => {
+  if (req.body.username.toSting().length != 10) {
+    req.flash("error", "Mobile number should contain 10 digits");
+    return res.render("signup");
+  }
+
   try {
     if (req.body.adminCode === process.env.ADMIN_SECRET) {
       const newAdmin = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         username: req.body.username,
         email: req.body.email,
         isAdmin: true,
@@ -36,7 +43,7 @@ exports.postAdminSignUp = async (req, res, next) => {
       await passport.authenticate("local")(req, res, () => {
         req.flash(
           "success",
-          "Hello, " + user.username + " Welcome to Admin Dashboard"
+          "Hello, " + `${user.firstName} ${user.lastName}` + " Welcome to Admin Dashboard"
         );
         res.redirect("/admin");
       });
@@ -45,6 +52,7 @@ exports.postAdminSignUp = async (req, res, next) => {
       return res.redirect("back");
     }
   } catch (err) {
+    console.log(err);
     req.flash(
       "error",
       "Given info matches someone registered as User. Please provide different info for registering as Admin"

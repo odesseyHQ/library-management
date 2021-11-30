@@ -36,15 +36,15 @@
                     <%if(i > 5) break; %>
                     <% if(activities[i].category =="Issue") { %>
                         <li class="list-group-item">
-                           <%=user.username%> issued <%=activities[i].info.title%> at <%=activities[i].entryTime.toDateString()%> 
+                           <%=activities[i].user_id.userFullName%> issued <%=activities[i].info.title%> at <%=activities[i].entryTime.toDateString()%> 
                         </li>
                     <% } else if(activities[i].category =="Return") { %>
                         <li class="list-group-item">
-                           <%=user.username%> returned <%=activities[i].info.title%> at <%=activities[i].entryTime.toDateString()%> 
+                           <%=activities[i].user_id.userFullName%> returned <%=activities[i].info.title%> at <%=activities[i].entryTime.toDateString()%> 
                         </li>
                     <% }  else if(activities[i].category =="Renew") { %>
                         <li class="list-group-item">
-                           <%=user.username%> renewed <%=activities[i].info.title%> at <%=activities[i].entryTime.toDateString()%> 
+                           <%=activities[i].user_id.userFullName%> renewed <%=activities[i].info.title%> at <%=activities[i].entryTime.toDateString()%> 
                         </li>
                     <% }  else if(activities[i].category =="Update Profile") { %>
                         <li class="list-group-item">

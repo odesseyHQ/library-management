@@ -13,17 +13,27 @@
           </div>
             <div class="card-block">
               <form class="p-3" action="/auth/admin-signup" method="POST">
-            
+                
                 <div class="form-group">
-                  <label class="form-control-label">Pick a username</label>
-                  <input type="text" name="username" placeholder="Username" class="form-control" required>
+                  <label class="form-control-label">First Name</label>
+                  <input type="text" name="firstName" placeholder="Enter first name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-control-label">Last Name</label>
+                  <input type="text" name="lastName" placeholder="Enter last name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-control-label">Mobile</label>
+                  <input type="number" name="username" placeholder="Enter 10 digit mobile number" class="form-control" required>
                 </div>
                 
                 <div class="form-group">
                   <label class="form-control-label">Email</label>
                   <input type="email" name="email" placeholder="Email" class="form-control" required>
                 </div>
-                
+
                 <div class="form-group">
                   <label class="form-control-label">Password</label>
                   <input type="password" name="password" placeholder="Password" class="form-control" required>

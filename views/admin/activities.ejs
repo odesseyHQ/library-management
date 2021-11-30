@@ -61,19 +61,19 @@
                 <tr>
                 <% if(activities[i].category =="Issue") { %>
                       <td>
-                         <%=activities[i].user_id.username || 'This user'%> issued <%=activities[i].info.title%> 
+                         <%=activities[i].user_id.userFullName || 'This user'%> issued <%=activities[i].info.title%> 
                       </td>
                       <td>Issue</td>
                       <td><%=activities[i].entryTime.toDateString()%></td>
                   <% } else if(activities[i].category =="Return") { %>
                       <td>
-                         <%=activities[i].user_id.username || 'This user'%> returned <%=activities[i].info.title%> 
+                         <%=activities[i].user_id.userFullName || 'This user'%> returned <%=activities[i].info.title%> 
                       </td>
                       <td>Return</td>
                       <td><%=activities[i].entryTime.toDateString()%></td>
                   <% }  else if(activities[i].category =="Renew") { %>
                       <td>
-                         <%=activities[i].user_id.username || 'This user'%> renewed <%=activities[i].info.title%> 
+                         <%=activities[i].user_id.userFullName || 'This user'%> renewed <%=activities[i].info.title%> 
                       </td>
                       <td>Renew</td>
                       <td><%=activities[i].entryTime.toDateString()%></td>

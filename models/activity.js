@@ -26,6 +26,7 @@ const activitySchema = new mongoose.Schema({
             ref : "User",
         },
         username : String,
+        userFullName: String,
     },
     
     fine : {

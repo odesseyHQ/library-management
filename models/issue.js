@@ -22,7 +22,8 @@ const issueSchema = new mongoose.Schema({
            ref : 'User',
        },
        
-       username : String,
+       username : Number,
+       userFullName: String,
    },
 });
 

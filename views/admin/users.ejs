@@ -52,7 +52,7 @@
             <thead class="thead-inverse">
               <tr>
                 <th>Name</th>
-                <th>User name</th>
+                <th>Mobile</th>
                 <th>Email</th>
                  <th>Gender</th>
                 <th>Date Regisetered</th>
@@ -73,6 +73,11 @@
                 <td><%=user.joined.toDateString()%></td>
                 <td><%=user.violationFlag%></td>
                 <td>$<%=user.fines%></td>
+                <td>
+                  <span>
+                      <a href="/admin/user/update/<%=user._id%>" class="btn btn-info btn-sm">Update</a>
+                  </span>
+              </td>
                 <td>
                   <%if(user.bookIssueInfo.length > 0) { %>
                   <a href="/admin/users/delete/<%=user._id%>" title="This user has books in possession. Are you sure to delete this user?" class="btn btn-sm btn-danger">

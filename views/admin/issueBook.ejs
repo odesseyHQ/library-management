@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<!--NAVIGATION BAR FOR ADMIN-->
+<% include ../partials/adminNav %>
+
+<% include ../partials/alerts %>
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card">
+              <div class="card-header text-center">
+                <h4>Issue Book</h4>
+              </div>
+                <div class="card-block">
+                  <form class="p-3" action="" method="POST">
+                      
+                    <div class="form-group">
+                      <label class="form-control-label">Username</label>
+                      <input type="text" name="username" placeholder="username" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-control-label">ISBN</label>
+                      <input type="Number" name="isbn" placeholder="Book ISBN" class="form-control" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Add Book</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<% include ../partials/footer %>
